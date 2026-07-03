@@ -24,20 +24,10 @@ import lombok.ToString;
 import mg.yoan.course.PojaGenerated;
 
 @PojaGenerated
-@Entity
-@Table(name = "\"courses\"")
-@Getter
-@Setter
 @ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Course {
-  @Id private UUID id;
-
-import lombok.Getter;
-import lombok.Setter;
-
 @Entity
 @Table(name = "courses")
 @Getter
