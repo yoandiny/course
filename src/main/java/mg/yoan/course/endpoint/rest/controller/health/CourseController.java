@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class CourseController {
 
-    private final CourseService courseService;
+  private final CourseService courseService;
 
-    @PostMapping
-    public ResponseEntity<Course> create(@RequestBody Course course) {
-        var created = courseService.create(course);
-        return ResponseEntity.status(HttpStatus.CREATED).body(created);
-    }
+  @PostMapping
+  public ResponseEntity<Course> create(@RequestBody Course course) {
+    var created = courseService.create(course);
+    return ResponseEntity.status(HttpStatus.CREATED).body(created);
+  }
 }

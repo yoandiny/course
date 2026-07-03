@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class CourseService {
 
-    private final CourseRepository courseRepository;
+  private final CourseRepository courseRepository;
 
-    public Course create(Course course) {
-        return courseRepository.save(course);
-    }
+  public Course create(Course course) {
+    return courseRepository.save(course);
+  }
 }

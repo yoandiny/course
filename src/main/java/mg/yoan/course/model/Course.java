@@ -16,13 +16,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Course {
 
-    @Id
-    @GeneratedValue
-    private UUID id;
+  @Id @GeneratedValue private UUID id;
 
-    private String name;
+  private String name;
 
-    private Instant startDate;
+  private Instant startDate;
 
-    private Instant endDate;
+  private Instant endDate;
 }
