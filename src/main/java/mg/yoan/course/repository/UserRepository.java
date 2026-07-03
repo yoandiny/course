@@ -1,12 +1,10 @@
 package mg.yoan.course.repository;
 
 import java.util.UUID;
-
 import mg.yoan.course.PojaGenerated;
 import mg.yoan.course.repository.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
 
 @PojaGenerated
 @Repository
