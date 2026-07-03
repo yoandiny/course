@@ -5,26 +5,20 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.time.Instant;
 import java.util.UUID;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import mg.yoan.course.PojaGenerated;
 
 @PojaGenerated
-@Entity
-@Table(name = "\"courses\"")
-@Getter
-@Setter
 @ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
+@Table(name = "courses")
+@Getter
+@Setter
 public class Course {
   @Id private UUID id;
-
   private String name;
   private Instant startDate;
   private Instant endDate;
