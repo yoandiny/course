@@ -1,7 +1,7 @@
-package mg.yoan.course.endpoint.rest.controller.health;
+package mg.yoan.course.endpoint.rest.controller;
 
 import lombok.AllArgsConstructor;
-import mg.yoan.course.model.Course;
+import mg.yoan.course.repository.model.Course;
 import mg.yoan.course.service.CourseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
