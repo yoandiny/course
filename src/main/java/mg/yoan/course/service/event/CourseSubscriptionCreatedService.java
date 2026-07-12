@@ -45,7 +45,14 @@ public class CourseSubscriptionCreatedService implements Consumer<CourseSubscrip
             .orElseThrow(
                 () -> new IllegalStateException("Course not found: " + event.getCourseId()));
 
-    String ticketHtml = "<html><body><h1>Ticket d'inscription</h1><p>Participant : " + user.getFirstName() + " " + user.getLastName() + "</p><p>Cours : " + course.getName() + "</p></body></html>";
+    String ticketHtml =
+        "<html><body><h1>Ticket d'inscription</h1><p>Participant : "
+            + user.getFirstName()
+            + " "
+            + user.getLastName()
+            + "</p><p>Cours : "
+            + course.getName()
+            + "</p></body></html>";
     File ticketPdf = pdfGeneratorService.generatePdf(ticketHtml, "ticket-" + course.getId());
 
     String bucketKey = "tickets/" + course.getId() + "/" + user.getId() + "/ticket.pdf";

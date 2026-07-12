@@ -43,7 +43,9 @@ class CourseSubscriptionCreatedServiceTest {
     mailer = mock(Mailer.class);
     bucketComponent = mock(BucketComponent.class);
     pdfGeneratorService = mock(PdfGeneratorService.class);
-    service = new CourseSubscriptionCreatedService(userRepository, courseRepository, mailer, bucketComponent, pdfGeneratorService);
+    service =
+        new CourseSubscriptionCreatedService(
+            userRepository, courseRepository, mailer, bucketComponent, pdfGeneratorService);
   }
 
   @Test
@@ -54,13 +56,20 @@ class CourseSubscriptionCreatedServiceTest {
     event.setUserId(userId);
     event.setCourseId(courseId);
 
-    User user = User.builder().id(userId).firstName("John").lastName("Doe").email("john.doe@example.com").build();
+    User user =
+        User.builder()
+            .id(userId)
+            .firstName("John")
+            .lastName("Doe")
+            .email("john.doe@example.com")
+            .build();
     Course course = Course.builder().id(courseId).name("Java Programming").build();
 
     File tempPdf = File.createTempFile("test", ".pdf");
 
     var bucketKey = "tickets/" + courseId + "/" + userId + "/ticket.pdf";
-    var ticketUrl = URI.create("https://dummy-bucket.s3.eu-west-3.amazonaws.com/" + bucketKey).toURL();
+    var ticketUrl =
+        URI.create("https://dummy-bucket.s3.eu-west-3.amazonaws.com/" + bucketKey).toURL();
 
     when(userRepository.findById(userId)).thenReturn(Optional.of(user));
     when(courseRepository.findById(courseId)).thenReturn(Optional.of(course));
